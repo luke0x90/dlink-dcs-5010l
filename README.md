@@ -16,18 +16,22 @@ screen /dev/ttyUSB0 57600
 ## netstat
 
 ```
-# ./bin/netstat -tulpn
+# netstat -tulpn
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
 tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      854/alphapd
-tcp        0      0 192.168.0.20:8502       0.0.0.0:*               LISTEN      9             LISTEN      854/alphapd
-netstat: /proc/net/tcp6: N0.0.0:62976           0.0.0.0:*                           882/lanconfig
+tcp        0      0 192.168.0.20:8502       0.0.0.0:*               LISTEN      911/udev
+tcp        0      0 0.phapd
+udp                             882/lanconfig
 udp        0      0 0.0.0.0:2051            0.0.0.0:*                           911/udev
-udp        0      0 0.0.0.0:2052            0.0.0.0:*                           2192/mDNSResp                       2196/mDNSResponder
-udp        0      0 0    0.0.0.0:*                           883/tftpupload
+udp        0      0 0.0.0.0:2052            0.0.0.0:*                           2192/mDNSResponder
+udp        0      0 0.0.0.0:2053            0.0.0.0:*                           2196/mDN*                           889/mydlinkevent
+udp        0                    1593/udhcpd
+udp        0      0 0.0.0.0:69              0.0.0.0:*                           883/tftpupload
 udp        0      0 0.0.0.0:5978            0.0.0.0:*                           1439/dcp
 udp        0      0 0.0.0.0:5353            0.0.0.0:*                           2196/mDNSResponder
-udp        0      0 0.0.0.0:5353            0.0.0.0:*                           0.0.0.0:*                           911/udev
+udp             2192/mDNSResponder
+udp        0      0 0.0.0.0:1900   /udev
 ```
 
 ## ps aux
